@@ -1,0 +1,39 @@
+* {
+    overflow: hidden;
+    background-color: rgb(204, 241, 241);
+}
+
+#snake {
+    border: 3px solid black;
+    background-color: rgb(9, 18, 19);
+    box-shadow: #d62e11 0 0 5px 5px;
+}
+
+.buttons {
+    position: relative;
+    left: 95px;
+}
+
+#leftButton {
+    position: absolute;
+    left: 194px;
+    top: 55px;
+}
+
+#rightButton {
+    position: absolute;
+    left: 258px;
+    top: 55px;
+}
+
+#upButton {
+    position: absolute;
+    left: 229px;
+    top: 24px;
+}
+
+#downButton {
+    position: absolute;
+    left: 228px;
+    top: 85px;
+}
