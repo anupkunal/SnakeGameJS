@@ -1,39 +1,56 @@
 * {
-    overflow: hidden;
-    background-color: rgb(204, 241, 241);
+    background-color: cadetblue;
+}
+
+.alert {
+    box-shadow: rgb(2, 245, 2) 0 0 3px 3px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
 }
 
 #snake {
     border: 3px solid black;
-    background-color: rgb(9, 18, 19);
-    box-shadow: #d62e11 0 0 5px 5px;
+    background-color: black;
+    box-shadow: rgb(15, 245, 34) 0 0 5px 5px;
 }
 
 .buttons {
     position: relative;
-    left: 95px;
+    margin-left: 10px;
 }
 
 #leftButton {
+    box-shadow: rgb(253, 33, 33) 0 0 1px 1px;
     position: absolute;
     left: 194px;
     top: 55px;
 }
 
 #rightButton {
+    box-shadow: rgb(253, 33, 33) 0 0 1px 1px;
     position: absolute;
     left: 258px;
     top: 55px;
 }
 
 #upButton {
+    box-shadow: rgb(253, 33, 33) 0 0 1px 1px;
     position: absolute;
     left: 229px;
     top: 24px;
 }
 
 #downButton {
+    box-shadow: rgb(253, 33, 33) 0 0 1px 1px;
     position: absolute;
     left: 228px;
     top: 85px;
+}
+
+#score {
+    margin-left: 0px;
+    font-size: 20px;
+    color: rgb(246, 248, 246);
+    float: left;
 }
