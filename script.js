@@ -1,12 +1,14 @@
 var gameScreen = document.getElementById("snake");
-const BOARD_WIDTH = 360;
-const BOARD_HEIGHT = 600;
+var scorePlace = document.getElementById("score");
+
+const BOARD_WIDTH = 340;
+const BOARD_HEIGHT = 500;
 gameScreen.width = BOARD_WIDTH;
 gameScreen.height = BOARD_HEIGHT;
 
 var ctx = gameScreen.getContext("2d");
 
-const snakeWidth = 20;
+const snakeWidth = 10;
 const snakeInitialSize = 4;
 var score = 0;
 
@@ -107,14 +109,33 @@ var leftButton = document.getElementById("leftButton");
 var rightButton = document.getElementById("rightButton");
 var downButton = document.getElementById("downButton");
 
-console.log(upButton);
-
 document.addEventListener("keydown", handleKeyPress);
 
-// upButton.addEventListener("click", () => {
-//     if (direction != DOWN)
-//         direction = UP;
-// });
+upButton.addEventListener("click", upButtonPressed);
+leftButton.addEventListener("click", leftButtonPressed);
+rightButton.addEventListener("click", rightButtonPressed);
+downButton.addEventListener("click", downButtonPressed);
+
+function upButtonPressed() {
+    if (direction != DOWN)
+        direction = UP;
+}
+
+function leftButtonPressed() {
+    if (direction != RIGHT)
+        direction = LEFT;
+}
+
+function rightButtonPressed() {
+    if (direction != LEFT)
+        direction = RIGHT;
+}
+
+function downButtonPressed() {
+    if (direction != UP)
+        direction = DOWN;
+}
+
 
 function handleKeyPress(event) {
     switch (event.key) {
@@ -147,9 +168,7 @@ function drawFood() {
 }
 
 function drawScore() {
-    ctx.fillStyle = "#F0FFF0";
-    ctx.font = "15px Arial";
-    ctx.fillText("Score : " + score, BOARD_WIDTH - 80, 12);
+    scorePlace.innerHTML = "score : " + score;
 }
 
 function run() {
@@ -161,10 +180,15 @@ function run() {
         drawScore();
     } else {
         ctx.clearRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
-        ctx.font = "30px Arial";
+        ctx.font = "50px Arial";
         ctx.fillText("GameOver", 100, 300);
         clearInterval();
     }
 }
 
-setInterval(run, 300);
+var alertWindow = document.querySelector(".alert");
+var alertButton = document.querySelector(".start");
+alertButton.addEventListener("click", () => {
+    alertWindow.style.display = "none";
+    setInterval(run, 300);
+});
